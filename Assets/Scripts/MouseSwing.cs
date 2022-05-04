@@ -25,7 +25,7 @@ public class MouseSwing : MonoBehaviour
 
     [SerializeField]
     [Range(.1f, 5f)]
-    private float forceMult;
+    private float forceMult = 1f;
 
     bool isTracking = false;
     float timeStarted = 0;
