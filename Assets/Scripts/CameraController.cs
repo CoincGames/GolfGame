@@ -12,8 +12,10 @@ public class CameraController : MonoBehaviour
     private Vector3 cameraOffset;
 
     [SerializeField]
-    [Range(.1f, 5f)]
-    private float degreestoRotatePerFrame;
+    [Range(0.1f, 10f)]
+    private float rotationSensitivity = .5f;
+
+    private float degreestoRotatePerFrame = .5f;
 
     Vector3 camInitPos;
     Quaternion camInitRot;
@@ -45,7 +47,7 @@ public class CameraController : MonoBehaviour
     void rotate(bool isPositive)
     {
         cameraOffset = transform.position - ball.transform.position;
-        float rotationDegree = isPositive ? degreestoRotatePerFrame : -degreestoRotatePerFrame;
+        float rotationDegree = (isPositive ? degreestoRotatePerFrame : -degreestoRotatePerFrame) * rotationSensitivity;
         cameraOffset = Quaternion.Euler(0, rotationDegree, 0) * cameraOffset;
         directionArrowController.rotate(rotationDegree);
         updateLocation();

@@ -10,6 +10,9 @@ public class MouseSwing : MonoBehaviour
     private Camera cam;
 
     [SerializeField]
+    private bool showGizmos = false;
+
+    [SerializeField]
     private float swingTimeGapAllowance;
 
     [SerializeField]
@@ -25,15 +28,16 @@ public class MouseSwing : MonoBehaviour
 
     [SerializeField]
     [Range(.1f, 5f)]
-    private float forceMult = 1f;
+    private float forceMult = 2f;
+
+    [SerializeField]
+    private Transform startPos;
+    Quaternion initRot;
 
     bool isTracking = false;
     float timeStarted = 0;
     float trackedMovement = 0;
     bool impactOnFixed = false;
-
-    Vector3 initPos;
-    Quaternion initRot;
 
     Rigidbody rb;
 
@@ -43,7 +47,7 @@ public class MouseSwing : MonoBehaviour
         rb.maxAngularVelocity = 500;
         rb.sleepThreshold = .2f;
 
-        initPos = golfball.transform.position;
+        golfball.transform.position = startPos.position;
         initRot = golfball.transform.rotation;
     }
 
@@ -88,10 +92,20 @@ public class MouseSwing : MonoBehaviour
             doImpact();
             impactOnFixed = false;
         }
+
+        if (golfball.transform.position.y < -5)
+        {
+            reset();
+        }
     }
 
     private void OnDrawGizmos()
     {
+        if (!showGizmos)
+        {
+            return;
+        }
+
         Vector3 camPos = cam.transform.position;
         Vector3 ballPos = golfball.transform.position;
         Vector3 pointA = new Vector3(camPos.x, ballPos.y, camPos.z);
@@ -105,7 +119,7 @@ public class MouseSwing : MonoBehaviour
 
     private void reset()
     {
-        golfball.transform.SetPositionAndRotation(initPos, initRot);
+        golfball.transform.SetPositionAndRotation(startPos.position, initRot);
         Rigidbody rb = golfball.GetComponent<Rigidbody>();
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
@@ -171,6 +185,7 @@ public class MouseSwing : MonoBehaviour
         float distancePerSecond = trackedMovement / relevantTimeElapsed;
 
         float force = distancePerSecond * 250;
+        force *= forceMult;
 
         if (force > powerTracker.maxValue)
         {
@@ -179,8 +194,6 @@ public class MouseSwing : MonoBehaviour
         powerTracker.value = force;
 
         powerTracker.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(low, high, powerTracker.normalizedValue);
-
-        force *= forceMult;
 
         return force;
     }
