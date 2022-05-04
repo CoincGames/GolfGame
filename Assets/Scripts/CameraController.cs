@@ -7,17 +7,21 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private GameObject ball;
     [SerializeField]
+    private DirectionIndicator directionArrowController;
+    [SerializeField]
     private Vector3 cameraOffset;
 
     [SerializeField]
     [Range(.1f, 5f)]
     private float degreestoRotatePerFrame;
 
-    Quaternion initRot;
+    Vector3 camInitPos;
+    Quaternion camInitRot;
 
     private void Start()
     {
-        initRot = transform.rotation;
+        camInitPos = transform.position;
+        camInitRot = transform.rotation;
     }
 
     // Update is called once per frame
@@ -41,7 +45,9 @@ public class CameraController : MonoBehaviour
     void rotate(bool isPositive)
     {
         cameraOffset = transform.position - ball.transform.position;
-        cameraOffset = Quaternion.Euler(0, isPositive ? degreestoRotatePerFrame : -degreestoRotatePerFrame, 0) * cameraOffset;
+        float rotationDegree = isPositive ? degreestoRotatePerFrame : -degreestoRotatePerFrame;
+        cameraOffset = Quaternion.Euler(0, rotationDegree, 0) * cameraOffset;
+        directionArrowController.rotate(rotationDegree);
         updateLocation();
         Vector3 ballPos = ball.transform.position;
         Vector3 cameraLookVector = new Vector3(ballPos.x, ballPos.y + .435f, ballPos.z);

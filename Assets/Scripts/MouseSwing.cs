@@ -2,9 +2,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Rigidbody))]
 public class MouseSwing : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject golfball;
     [SerializeField]
     private Camera cam;
 
@@ -34,12 +35,12 @@ public class MouseSwing : MonoBehaviour
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = golfball.GetComponent<Rigidbody>();
         rb.maxAngularVelocity = 500;
         rb.sleepThreshold = .2f;
 
-        initPos = transform.position;
-        initRot = transform.rotation;
+        initPos = golfball.transform.position;
+        initRot = golfball.transform.rotation;
     }
 
     // Update is called once per frame
@@ -88,7 +89,7 @@ public class MouseSwing : MonoBehaviour
     private void OnDrawGizmos()
     {
         Vector3 camPos = cam.transform.position;
-        Vector3 ballPos = transform.position;
+        Vector3 ballPos = golfball.transform.position;
         Vector3 pointA = new Vector3(camPos.x, ballPos.y, camPos.z);
 
         Vector3 tempSize = new Vector3(0.2f, 0.2f, 0.2f);
@@ -100,8 +101,8 @@ public class MouseSwing : MonoBehaviour
 
     private void reset()
     {
-        transform.SetPositionAndRotation(initPos, initRot);
-        Rigidbody rb = GetComponent<Rigidbody>();
+        golfball.transform.SetPositionAndRotation(initPos, initRot);
+        Rigidbody rb = golfball.GetComponent<Rigidbody>();
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
     }
@@ -109,7 +110,7 @@ public class MouseSwing : MonoBehaviour
     void drawLine()
     {
         Vector3 camPos = cam.transform.position;
-        Vector3 ballPos = transform.position;
+        Vector3 ballPos = golfball.transform.position;
         Vector3 pointA = new Vector3(camPos.x, ballPos.y, camPos.z);
 
         Vector3 dir = (ballPos - pointA).normalized;
@@ -145,12 +146,12 @@ public class MouseSwing : MonoBehaviour
     void testImpact()
     {
         Vector3 camPos = cam.transform.position;
-        Vector3 ballPos = transform.position;
+        Vector3 ballPos = golfball.transform.position;
         Vector3 pointA = new Vector3(camPos.x, ballPos.y, camPos.z);
 
         Vector3 dir = (ballPos - pointA).normalized;
 
-        GetComponent<Rigidbody>().AddForce(dir * testInputForce, ForceMode.Impulse);
+        golfball.GetComponent<Rigidbody>().AddForce(dir * testInputForce, ForceMode.Impulse);
     }
 
     float getImpactForce()
@@ -188,12 +189,12 @@ public class MouseSwing : MonoBehaviour
         float force = getImpactForce();
 
         Vector3 camPos = cam.transform.position;
-        Vector3 ballPos = transform.position;
+        Vector3 ballPos = golfball.transform.position;
         Vector3 pointA = new Vector3(camPos.x, ballPos.y, camPos.z);
 
         Vector3 dir = (ballPos - pointA).normalized;
 
-        GetComponent<Rigidbody>().AddForce(dir * force, ForceMode.Impulse);
+        golfball.GetComponent<Rigidbody>().AddForce(dir * force, ForceMode.Impulse);
         trackedMovement = 0;
 
         print(force);
