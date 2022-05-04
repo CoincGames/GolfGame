@@ -1035,6 +1035,7 @@ MonoBehaviour:
   powerTracker: {fileID: 76405105}
   low: {r: 0.08019057, g: 0.8207547, b: 0, a: 1}
   high: {r: 1, g: 0.103087686, b: 0, a: 1}
+  forceMult: 2.5
 --- !u!4 &1346698574
 Transform:
   m_ObjectHideFlags: 0

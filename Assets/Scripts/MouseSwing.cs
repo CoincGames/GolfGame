@@ -23,6 +23,10 @@ public class MouseSwing : MonoBehaviour
     [SerializeField]
     private Color high;
 
+    [SerializeField]
+    [Range(.1f, 5f)]
+    private float forceMult;
+
     bool isTracking = false;
     float timeStarted = 0;
     float trackedMovement = 0;
@@ -175,6 +179,8 @@ public class MouseSwing : MonoBehaviour
         powerTracker.value = force;
 
         powerTracker.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(low, high, powerTracker.normalizedValue);
+
+        force *= forceMult;
 
         return force;
     }
