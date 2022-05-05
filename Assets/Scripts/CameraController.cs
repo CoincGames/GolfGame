@@ -1,29 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
     [SerializeField]
-    private GameObject ball;
-    [SerializeField]
-    private DirectionIndicator directionArrowController;
-    [SerializeField]
-    private Vector3 cameraOffset;
+    private Vector3 cameraOffset = new Vector3(-1.2f, 1f, 0);
 
     [SerializeField]
     [Range(0.1f, 10f)]
     private float rotationSensitivity = .5f;
 
+    [SerializeField]
+    private GameObject golfballGroup;
+
+    private GameObject ball;
+    private DirectionIndicator directionArrowController;
+
     private float degreestoRotatePerFrame = .5f;
 
-    Vector3 camInitPos;
-    Quaternion camInitRot;
-
-    private void Start()
+    private void Awake()
     {
-        camInitPos = transform.position;
-        camInitRot = transform.rotation;
+        ball = golfballGroup.GetComponentInChildren<Collider>().gameObject;
+        directionArrowController = golfballGroup.GetComponentInChildren<DirectionIndicator>();
     }
 
     // Update is called once per frame
@@ -51,13 +48,13 @@ public class CameraController : MonoBehaviour
         cameraOffset = Quaternion.Euler(0, rotationDegree, 0) * cameraOffset;
         directionArrowController.rotate(rotationDegree);
         updateLocation();
-        Vector3 ballPos = ball.transform.position;
-        Vector3 cameraLookVector = new Vector3(ballPos.x, ballPos.y + .435f, ballPos.z);
-        transform.LookAt(cameraLookVector);
     }
 
     void updateLocation()
     {
         transform.position = cameraOffset + ball.transform.position;
+        Vector3 ballPos = ball.transform.position;
+        Vector3 cameraLookVector = new Vector3(ballPos.x, ballPos.y + .435f, ballPos.z);
+        transform.LookAt(cameraLookVector);
     }
 }
