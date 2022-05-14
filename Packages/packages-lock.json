@@ -1,5 +1,6 @@
 {
   "dependencies": {
+<<<<<<< HEAD
     "com.autodesk.fbx": {
       "version": "4.1.1",
       "depth": 2,
@@ -13,11 +14,20 @@
       "source": "registry",
       "dependencies": {
         "com.unity.mathematics": "1.2.1"
+=======
+    "com.unity.adaptiveperformance": {
+      "version": "4.0.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.subsystemregistration": "1.1.0",
+        "com.unity.profiling.core": "1.0.0"
+>>>>>>> eb4600bf3c42b3006a64dec7a9be487f152009bb
       },
       "url": "https://packages.unity.com"
     },
     "com.unity.collab-proxy": {
-      "version": "1.15.15",
+      "version": "1.15.16",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -78,13 +88,20 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+<<<<<<< HEAD
     "com.unity.mathematics": {
       "version": "1.2.6",
       "depth": 1,
+=======
+    "com.unity.nuget.newtonsoft-json": {
+      "version": "3.0.2",
+      "depth": 2,
+>>>>>>> eb4600bf3c42b3006a64dec7a9be487f152009bb
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+<<<<<<< HEAD
     "com.unity.polybrush": {
       "version": "1.1.2",
       "depth": 1,
@@ -94,6 +111,8 @@
       },
       "url": "https://packages.unity.com"
     },
+=======
+>>>>>>> eb4600bf3c42b3006a64dec7a9be487f152009bb
     "com.unity.probuilder": {
       "version": "5.0.4",
       "depth": 0,
@@ -105,6 +124,7 @@
       },
       "url": "https://packages.unity.com"
     },
+<<<<<<< HEAD
     "com.unity.render-pipelines.core": {
       "version": "12.1.6",
       "depth": 1,
@@ -153,17 +173,39 @@
     },
     "com.unity.searcher": {
       "version": "4.9.1",
+=======
+    "com.unity.profiling.core": {
+      "version": "1.0.2",
+>>>>>>> eb4600bf3c42b3006a64dec7a9be487f152009bb
       "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.services.core": {
-      "version": "1.0.1",
+      "version": "1.3.1",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.modules.unitywebrequest": "1.0.0"
+        "com.unity.modules.unitywebrequest": "1.0.0",
+        "com.unity.nuget.newtonsoft-json": "3.0.2",
+        "com.unity.modules.androidjni": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.settings-manager": {
+      "version": "1.0.3",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.subsystemregistration": {
+      "version": "1.1.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.subsystems": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
