@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 9709.154, g: 9555.77, b: 8096.3438, a: 1}
+  m_IndirectSpecularColor: {r: 9710.771, g: 9558.277, b: 8098.5234, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3400,11 +3400,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1307349067 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2639111378642694299, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
-  m_PrefabInstance: {fileID: 984801426966076205}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1389159556
 Mesh:
   m_ObjectHideFlags: 0
@@ -3897,8 +3892,8 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: fa5dcd7f2b638b14982ece48d7b954cb, type: 3}
 --- !u!1 &1576540261 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 984801427583157064, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
-  m_PrefabInstance: {fileID: 984801426966076205}
+  m_CorrespondingSourceObject: {fileID: 3029954433704460695, guid: 8de8b2801dc96d641934e86714b6769c, type: 3}
+  m_PrefabInstance: {fileID: 3029954434993691122}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1782651693
 PrefabInstance:
@@ -5753,135 +5748,75 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1001 &984801426966076205
+--- !u!1001 &3029954434993691122
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 325230928275450986, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f5ef65d07606601429cc8935c6361054, type: 2}
-    - target: {fileID: 984801427583157064, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
-      propertyPath: m_Name
-      value: Golfball
-      objectReference: {fileID: 0}
-    - target: {fileID: 1610621781292177632, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f5ef65d07606601429cc8935c6361054, type: 2}
-    - target: {fileID: 2639111378642694299, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2639111378642694299, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 3757872088619557594, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
+    - target: {fileID: 1405295631407341573, guid: 8de8b2801dc96d641934e86714b6769c, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3757872088619557594, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
+    - target: {fileID: 1405295631407341573, guid: 8de8b2801dc96d641934e86714b6769c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.362
       objectReference: {fileID: 0}
-    - target: {fileID: 3757872088619557594, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
+    - target: {fileID: 1405295631407341573, guid: 8de8b2801dc96d641934e86714b6769c, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3757872088619557594, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
+    - target: {fileID: 1405295631407341573, guid: 8de8b2801dc96d641934e86714b6769c, type: 3}
       propertyPath: m_LocalPosition.z
       value: -1.016
       objectReference: {fileID: 0}
-    - target: {fileID: 3757872088619557594, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
+    - target: {fileID: 1405295631407341573, guid: 8de8b2801dc96d641934e86714b6769c, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3757872088619557594, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
+    - target: {fileID: 1405295631407341573, guid: 8de8b2801dc96d641934e86714b6769c, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3757872088619557594, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
+    - target: {fileID: 1405295631407341573, guid: 8de8b2801dc96d641934e86714b6769c, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3757872088619557594, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
+    - target: {fileID: 1405295631407341573, guid: 8de8b2801dc96d641934e86714b6769c, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3757872088619557594, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
+    - target: {fileID: 1405295631407341573, guid: 8de8b2801dc96d641934e86714b6769c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3757872088619557594, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
+    - target: {fileID: 1405295631407341573, guid: 8de8b2801dc96d641934e86714b6769c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3757872088619557594, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
+    - target: {fileID: 1405295631407341573, guid: 8de8b2801dc96d641934e86714b6769c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4539053857002610978, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
+    - target: {fileID: 1827279749948810237, guid: 8de8b2801dc96d641934e86714b6769c, type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 1415570653}
-    - target: {fileID: 4539053857002610978, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
-      propertyPath: golfball
-      value: 
-      objectReference: {fileID: 1307349067}
-    - target: {fileID: 4539053857002610978, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
+    - target: {fileID: 1827279749948810237, guid: 8de8b2801dc96d641934e86714b6769c, type: 3}
       propertyPath: startPos
       value: 
       objectReference: {fileID: 741127702}
-    - target: {fileID: 4539053857002610978, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
-      propertyPath: showGizmos
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4539053857002610978, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
+    - target: {fileID: 1827279749948810237, guid: 8de8b2801dc96d641934e86714b6769c, type: 3}
       propertyPath: powerTracker
       value: 
       objectReference: {fileID: 786327610}
-    - target: {fileID: 4539310826161054332, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c902785d33113954195589988020fe91, type: 2}
-    - target: {fileID: 5985271761947793222, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
+    - target: {fileID: 3029954433704460695, guid: 8de8b2801dc96d641934e86714b6769c, type: 3}
+      propertyPath: m_Name
+      value: Golfball
       objectReference: {fileID: 0}
-    - target: {fileID: 5985271761947793222, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.125
-      objectReference: {fileID: 0}
-    - target: {fileID: 5985271761947793222, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5985271761947793222, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5985271761947793222, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5985271761947793222, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5985271761947793222, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6880032097458435714, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
-      propertyPath: golfball
-      value: 
-      objectReference: {fileID: 1307349067}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6bf750d3d6ddb624ab8435a6deebcc6f, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 8de8b2801dc96d641934e86714b6769c, type: 3}
 --- !u!4 &4400551647763298964 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6394529032858931740, guid: c0418579cc7a5f546b1f87d17dff420e, type: 3}
@@ -5894,6 +5829,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1025191615}
     m_Modifications:
+    - target: {fileID: 1681396930746302545, guid: c0418579cc7a5f546b1f87d17dff420e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d5278043a52b95b498dbe265acfc91f4, type: 2}
     - target: {fileID: 6394529032858931740, guid: c0418579cc7a5f546b1f87d17dff420e, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -5942,5 +5881,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hole
       objectReference: {fileID: 0}
+    - target: {fileID: 7764389417112793119, guid: c0418579cc7a5f546b1f87d17dff420e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fadbffa1f9bad6048ab00bb79f9d579d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0418579cc7a5f546b1f87d17dff420e, type: 3}
