@@ -6,5 +6,7 @@ public class StartPointPreview : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawSphere(transform.position, .05f);
+
+        Gizmos.DrawRay(new Ray(transform.position, transform.forward));
     }
 }

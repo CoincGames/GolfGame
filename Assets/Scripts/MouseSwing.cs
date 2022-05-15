@@ -48,6 +48,7 @@ public class MouseSwing : MonoBehaviour
         rb.sleepThreshold = .2f;
 
         golfball.transform.position = startPos.position;
+        golfball.transform.rotation = startPos.rotation;
         initRot = golfball.transform.rotation;
     }
 
