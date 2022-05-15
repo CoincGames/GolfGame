@@ -6,7 +6,6 @@ public class HoleVortex : MonoBehaviour
 
     [SerializeField]
     private float vortexForce = .5f;
-
     private void Awake()
     {
         vortexCollider = GetComponent<Collider>();
