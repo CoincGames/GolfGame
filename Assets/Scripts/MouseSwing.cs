@@ -31,12 +31,6 @@ public class MouseSwing : MonoBehaviour
     private float forceMult = 2f;
 
     [SerializeField]
-    private bool useSleepThreshold = true;
-    [SerializeField]
-    [Min(.0001f)]
-    private float sleepThreshold = .1f;
-
-    [SerializeField]
     private Transform startPos;
     Quaternion initRot;
 
@@ -51,10 +45,6 @@ public class MouseSwing : MonoBehaviour
     {
         rb = golfball.GetComponent<Rigidbody>();
         rb.maxAngularVelocity = 500;
-        if (useSleepThreshold)
-        {
-            rb.sleepThreshold = sleepThreshold;
-        }
 
         golfball.transform.position = startPos.position;
         golfball.transform.rotation = startPos.rotation;

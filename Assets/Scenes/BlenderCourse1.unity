@@ -135,7 +135,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46388687}
-  m_Material: {fileID: 13400000, guid: a3547b1648dd53c4d9a2c9d7ff4df042, type: 2}
+  m_Material: {fileID: 13400000, guid: 8e21376b488600a4b96a51a7f6655dd1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -510,7 +510,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399245708}
-  m_Material: {fileID: 13400000, guid: a3547b1648dd53c4d9a2c9d7ff4df042, type: 2}
+  m_Material: {fileID: 13400000, guid: 8e21376b488600a4b96a51a7f6655dd1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -864,7 +864,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 586486870}
-  m_Material: {fileID: 13400000, guid: a3547b1648dd53c4d9a2c9d7ff4df042, type: 2}
+  m_Material: {fileID: 13400000, guid: 8e21376b488600a4b96a51a7f6655dd1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -938,12 +938,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 754228045}
     - target: {fileID: 1827279749948810237, guid: 8de8b2801dc96d641934e86714b6769c, type: 3}
+      propertyPath: testInputForce
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827279749948810237, guid: 8de8b2801dc96d641934e86714b6769c, type: 3}
       propertyPath: useSleepThreshold
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3029954433704460695, guid: 8de8b2801dc96d641934e86714b6769c, type: 3}
       propertyPath: m_Name
       value: Golfball
+      objectReference: {fileID: 0}
+    - target: {fileID: 7802561307319047932, guid: 8de8b2801dc96d641934e86714b6769c, type: 3}
+      propertyPath: m_Drag
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7802561307319047932, guid: 8de8b2801dc96d641934e86714b6769c, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7802561307319047932, guid: 8de8b2801dc96d641934e86714b6769c, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8de8b2801dc96d641934e86714b6769c, type: 3}
@@ -2935,7 +2951,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26706
+  m_Name: pb_Mesh26786
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3121,7 +3137,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1706009746}
-  m_Material: {fileID: 13400000, guid: a3547b1648dd53c4d9a2c9d7ff4df042, type: 2}
+  m_Material: {fileID: 13400000, guid: 8e21376b488600a4b96a51a7f6655dd1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
