@@ -45,7 +45,10 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!mouseSwing.isTracking)
+        var position1 = ball.transform.position;
+        cameraCenter.transform.position = new Vector3(position1.x, position1.y + yOffset, position1.z);
+
+        if (!mouseSwing.isTracking && (mouseSwing.launchTime + .1f <= Time.time))
         {
             rotate();
         }
@@ -60,9 +63,6 @@ public class CameraController : MonoBehaviour
 
     void rotate()
     {
-        var position1 = ball.transform.position;
-        cameraCenter.transform.position = new Vector3(position1.x, position1.y + yOffset, position1.z);
-
         var rotation = cameraCenter.transform.rotation;
 
         float xRot = rotation.eulerAngles.x - Input.GetAxis("Mouse Y") * mouseSensitivity;

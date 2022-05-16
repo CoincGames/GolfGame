@@ -36,6 +36,9 @@ public class MouseSwing : MonoBehaviour
 
     [HideInInspector]
     public bool isTracking = false;
+    [HideInInspector]
+    public float launchTime = 0f;
+
     float timeStarted = 0;
     float trackedMovement = 0;
     bool impactOnFixed = false;
@@ -220,6 +223,8 @@ public class MouseSwing : MonoBehaviour
 
         golfball.GetComponent<Rigidbody>().AddForce(dir * force, ForceMode.Impulse);
         trackedMovement = 0;
+
+        launchTime = Time.time;
 
         print(force);
     }
