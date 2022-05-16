@@ -6,6 +6,9 @@ public class CameraController : MonoBehaviour
     [Range(0.1f, 10f)]
     private float mouseSensitivity = 1f;
 
+    [SerializeField]
+    private MouseSwing mouseSwing;
+
     public GameObject cameraCenter;
     public Camera cam;
     public float scrollSensitivity = 5f;
@@ -15,7 +18,7 @@ public class CameraController : MonoBehaviour
     public float zoomDefault = .14f;
     public float zoomDistance;
     
-    public float yOffset = .435f;	
+    public float yOffset = .435f;
     private RaycastHit _camHit;
 	// This one is public but no need to input any values for it
     public Vector3 camDist;
@@ -42,14 +45,16 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!Input.GetMouseButton(0))
+        if (!mouseSwing.isTracking)
         {
             rotate();
         }
+
         if (Input.GetAxis("Mouse ScrollWheel") != 0f)
         {
             zoom();
         }
+
         updateLocation();
     }
 
@@ -59,7 +64,13 @@ public class CameraController : MonoBehaviour
         cameraCenter.transform.position = new Vector3(position1.x, position1.y + yOffset, position1.z);
 
         var rotation = cameraCenter.transform.rotation;
-        rotation = Quaternion.Euler(rotation.eulerAngles.x - Input.GetAxis("Mouse Y") * mouseSensitivity, rotation.eulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity, rotation.eulerAngles.z);
+
+        float xRot = rotation.eulerAngles.x - Input.GetAxis("Mouse Y") * mouseSensitivity;
+        xRot = Mathf.Clamp(xRot, 0f, 89f);
+
+        float yRot = rotation.eulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity;
+
+        rotation = Quaternion.Euler(xRot, yRot, rotation.eulerAngles.z);
         cameraCenter.transform.rotation = rotation;
 
     }
@@ -90,6 +101,7 @@ public class CameraController : MonoBehaviour
 		and a point directly behind the camera (to smooth things, that's why there's an "obj"
 		GameObject, that is directly behind cam)
 		*/
+        
         if(Physics.Linecast(cameraCenter.transform.position, obj.transform.position, out _camHit))
         {
 			//This gets executed if there's any collider in the way
@@ -101,6 +113,7 @@ public class CameraController : MonoBehaviour
         }
 		// Clean up
         Destroy(obj);
+        
         transform.LookAt(ball.transform.position);
     }
 }
