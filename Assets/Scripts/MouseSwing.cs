@@ -45,7 +45,6 @@ public class MouseSwing : MonoBehaviour
     {
         rb = golfball.GetComponent<Rigidbody>();
         rb.maxAngularVelocity = 500;
-        rb.sleepThreshold = .2f;
 
         golfball.transform.position = startPos.position;
         golfball.transform.rotation = startPos.rotation;
