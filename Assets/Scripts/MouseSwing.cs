@@ -34,7 +34,11 @@ public class MouseSwing : MonoBehaviour
     private Transform startPos;
     Quaternion initRot;
 
-    bool isTracking = false;
+    [HideInInspector]
+    public bool isTracking = false;
+    [HideInInspector]
+    public float launchTime = 0f;
+
     float timeStarted = 0;
     float trackedMovement = 0;
     bool impactOnFixed = false;
@@ -56,32 +60,35 @@ public class MouseSwing : MonoBehaviour
     {
         drawLine();
 
-        if (Input.GetMouseButtonDown(0))
+        if (rb.IsSleeping())
         {
-            timeStarted = Time.time;
-            isTracking = true;
-        }
+            if (Input.GetMouseButtonDown(0))
+            {
+                timeStarted = Time.time;
+                isTracking = true;
+            }
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            impactOnFixed = true;
-            isTracking = false;
+            if (Input.GetMouseButtonUp(0))
+            {
+                impactOnFixed = true;
+                isTracking = false;
+            }
+
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                testImpact();
+            }
+
+            if (isTracking)
+            {
+                getImpactForce();
+                trackMouseMovement();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             reset();
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            testImpact();
-        }
-
-        if (isTracking)
-        {
-            getImpactForce();
-            trackMouseMovement();
         }
     }
 
@@ -215,6 +222,8 @@ public class MouseSwing : MonoBehaviour
 
         golfball.GetComponent<Rigidbody>().AddForce(dir * force, ForceMode.Impulse);
         trackedMovement = 0;
+
+        launchTime = Time.time;
 
         print(force);
     }
