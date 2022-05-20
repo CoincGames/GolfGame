@@ -30,9 +30,7 @@ public class MouseSwing : MonoBehaviour
     [Range(.1f, 5f)]
     private float forceMult = 2f;
 
-    [SerializeField]
-    private Transform startPos;
-    Quaternion initRot;
+    Transform startTransform;
 
     [HideInInspector]
     public bool isTracking = false;
@@ -50,9 +48,10 @@ public class MouseSwing : MonoBehaviour
         rb = golfball.GetComponent<Rigidbody>();
         rb.maxAngularVelocity = 500;
 
-        golfball.transform.position = startPos.position;
-        golfball.transform.rotation = startPos.rotation;
-        initRot = golfball.transform.rotation;
+        startTransform = GameManager.instance.getStartPositionForCurrentHole();
+
+        golfball.transform.position = startTransform.position;
+        golfball.transform.rotation = startTransform.rotation;
     }
 
     // Update is called once per frame
@@ -126,7 +125,12 @@ public class MouseSwing : MonoBehaviour
 
     private void reset()
     {
-        golfball.transform.SetPositionAndRotation(startPos.position, initRot);
+        startTransform = GameManager.instance.getStartPositionForCurrentHole();
+
+        Vector3 pos = startTransform.position;
+        Quaternion rot = startTransform.rotation;
+
+        golfball.transform.SetPositionAndRotation(pos, rot);
         Rigidbody rb = golfball.GetComponent<Rigidbody>();
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
