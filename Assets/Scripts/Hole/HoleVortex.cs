@@ -15,7 +15,7 @@ public class HoleVortex : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Vector3 normal = other.transform.position - vortexCollider.bounds.center;
+            Vector3 normal = vortexCollider.bounds.center - other.transform.position;
             other.attachedRigidbody.AddForce(normal * vortexForce);
         }
     }
