@@ -6,11 +6,8 @@ public class CameraController : MonoBehaviour
     [Range(0.1f, 10f)]
     private float mouseSensitivity = 1f;
 
-    [SerializeField]
-    private MouseSwing mouseSwing;
-
     public GameObject cameraCenter;
-    public Camera cam;
+    private Camera cam;
     public float scrollSensitivity = 5f;
     public float scrollDampening = 6f;
     public float zoomMin = 0f;
@@ -25,6 +22,7 @@ public class CameraController : MonoBehaviour
 
     [SerializeField]
     private GameObject golfballGroup;
+    private MouseSwing mouseSwing;
 
     public float collisionSensitivity = 1f;
     // Camera Target
@@ -34,6 +32,9 @@ public class CameraController : MonoBehaviour
     private void Awake()
     {
         ball = golfballGroup.GetComponentInChildren<Collider>().gameObject;
+        mouseSwing = golfballGroup.GetComponent<MouseSwing>();
+
+        cam = GetComponentInChildren<Camera>();
         camDist = cam.transform.localPosition;
         zoomDistance = zoomDefault;
         camDist.z = zoomDistance;
