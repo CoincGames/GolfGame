@@ -7,7 +7,7 @@ public class DirectionIndicator : MonoBehaviour
 
     private void Update()
     {
-        transform.position = golfball.transform.position - (transform.forward * .125f);
+        transform.position = golfball.transform.position - (transform.forward * .15f);
     }
 
     public void rotate(float rotationDegree)

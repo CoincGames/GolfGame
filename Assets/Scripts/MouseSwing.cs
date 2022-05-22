@@ -37,6 +37,7 @@ public class MouseSwing : MonoBehaviour
     [HideInInspector]
     public float launchTime = 0f;
 
+    private Vector3 resetPosition;
     float timeStarted = 0;
     float trackedMovement = 0;
     bool impactOnFixed = false;
@@ -49,6 +50,7 @@ public class MouseSwing : MonoBehaviour
         rb.maxAngularVelocity = 500;
 
         startTransform = GameManager.instance.getStartPositionForCurrentHole();
+        setResetPosition(golfball.transform.position);
 
         golfball.transform.position = startTransform.position;
         golfball.transform.rotation = startTransform.rotation;
@@ -219,6 +221,7 @@ public class MouseSwing : MonoBehaviour
             return;
         }
 
+        setResetPosition(golfball.transform.position);
         float force = getImpactForce();
 
         Vector3 camPos = cam.transform.position;
@@ -233,5 +236,15 @@ public class MouseSwing : MonoBehaviour
         launchTime = Time.time;
 
         print(force);
+    }
+
+    public void setResetPosition(Vector3 position)
+    {
+        resetPosition = new Vector3(position.x, position.y, position.z);
+    }
+
+    public Vector3 getResetPosition()
+    {
+        return resetPosition;
     }
 }

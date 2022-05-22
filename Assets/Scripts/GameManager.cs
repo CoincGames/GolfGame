@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private StartPoint[] startsPoints;
 
+    [SerializeField]
+    private CameraController cameraController;
+
     private void Awake()
     {
         if (setSingleton())
@@ -55,20 +58,26 @@ public class GameManager : MonoBehaviour
         return currentHole;
     }
 
+    public void sendToPosition(Vector3 position, GameObject golfball)
+    {
+        golfball.transform.position = position;
+        stopRigidbodyVelocities(golfball);
+
+    }
+
     public void sendToCurrentStartPoint(GameObject golfball)
     {
-        Transform transform = getStartPoint(currentHole).getTransform();
-
-        setGolfballTransform(golfball, transform);
-        stopRigidbodyVelocities(golfball);
+        Transform startTransform = getStartPoint(currentHole).getTransform();
+        sendToPosition(getStartPoint(currentHole).getTransform().position, golfball);
+        cameraController.setInitialRotation(startTransform.rotation.eulerAngles.y);
     }
 
     private void sendToNextStartPoint(GameObject golfball)
-    {
-        Transform transform = getStartPoint(++currentHole).getTransform();
-
-        setGolfballTransform(golfball, transform);
-        stopRigidbodyVelocities(golfball);
+    {   
+        Transform startTransform = getStartPoint(++currentHole).getTransform();
+        sendToPosition(startTransform.position, golfball);
+        cameraController.setInitialRotation(startTransform.rotation.eulerAngles.y);
+        golfball.GetComponentInParent<MouseSwing>().setResetPosition(startTransform.position);
     }
 
     private void setGolfballTransform(GameObject golfball, Transform transform)

@@ -15,8 +15,9 @@ public class CheckOnCorrectHole : MonoBehaviour
     {
         if (rb.IsSleeping() && !onCorrectGround())
         {
-            GameManager.instance.sendToCurrentStartPoint(golfball);
-            print("Resetting");
+            MouseSwing mouseSwing = golfball.GetComponentInParent<MouseSwing>();
+            GameManager.instance.sendToPosition(mouseSwing.getResetPosition(), golfball);
+            print("Resetting: " + mouseSwing.getResetPosition());
         }
     }
 
