@@ -23,11 +23,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            currentHole = 1;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            currentHole = 2;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            currentHole = 3;
+        }
+    }
+
     public void finishHole(GameObject golfball)
     {
-        currentHole++;
-
-        if (currentHole <= startsPoints.Length)
+        if (currentHole + 1 <= startsPoints.Length)
         {
             sendToNextStartPoint(golfball);
             return;
@@ -36,10 +50,38 @@ public class GameManager : MonoBehaviour
         finishCourse();
     }
 
+    public int getCurrentHole()
+    {
+        return currentHole;
+    }
+
+    public void sendToCurrentStartPoint(GameObject golfball)
+    {
+        Transform transform = getStartPoint(currentHole).getTransform();
+
+        setGolfballTransform(golfball, transform);
+        stopRigidbodyVelocities(golfball);
+    }
+
     private void sendToNextStartPoint(GameObject golfball)
     {
-        Vector3 nextStartPosition = getStartPoint(currentHole).getPosition();
-        golfball.transform.position = nextStartPosition;
+        Transform transform = getStartPoint(++currentHole).getTransform();
+
+        setGolfballTransform(golfball, transform);
+        stopRigidbodyVelocities(golfball);
+    }
+
+    private void setGolfballTransform(GameObject golfball, Transform transform)
+    {
+        golfball.transform.position = transform.position;
+        golfball.transform.rotation = transform.rotation;
+    }
+
+    private void stopRigidbodyVelocities(GameObject golfball)
+    {
+        Rigidbody rb = golfball.GetComponent<Rigidbody>();
+        rb.angularVelocity = Vector3.zero;
+        rb.velocity = Vector3.zero;
     }
 
     private void finishCourse()

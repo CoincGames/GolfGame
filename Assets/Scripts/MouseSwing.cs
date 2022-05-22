@@ -82,6 +82,9 @@ public class MouseSwing : MonoBehaviour
             {
                 getImpactForce();
                 trackMouseMovement();
+            } else
+            {
+                powerTracker.value = 0;
             }
         }
 
