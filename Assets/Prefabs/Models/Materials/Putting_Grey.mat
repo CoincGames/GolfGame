@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Putting_Green
-  m_Shader: {fileID: -6465566751694194690, guid: cc77cb35ea12b7f48b00387c76c192e8, type: 3}
+  m_Name: Putting_Grey
+  m_Shader: {fileID: -6465566751694194690, guid: f42f7851978352e498a3a8a42e84c84c, type: 3}
   m_ValidKeywords:
   - _ENABLE_FOG_ON_TRANSPARENT
   - _SURFACE_TYPE_TRANSPARENT
