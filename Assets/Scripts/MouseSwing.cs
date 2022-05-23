@@ -4,8 +4,9 @@ using UnityEngine.UI;
 
 public class MouseSwing : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject golfball;
+    public static GameObject golfball;
+
+
     [SerializeField]
     private Camera cam;
 
@@ -46,6 +47,8 @@ public class MouseSwing : MonoBehaviour
 
     private void Start()
     {
+        golfball = GetComponentInChildren<Rigidbody>().gameObject;
+
         rb = golfball.GetComponent<Rigidbody>();
         rb.maxAngularVelocity = 500;
 

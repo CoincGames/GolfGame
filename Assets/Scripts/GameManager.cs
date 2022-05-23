@@ -30,23 +30,35 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            currentHole = 1;
+            setCurrentHole(1);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            currentHole = 2;
+            setCurrentHole(2);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            currentHole = 3;
+            setCurrentHole(3);
         }
+    }
+
+    public void setCurrentHole(int hole)
+    {
+        if (hole == currentHole)
+        {
+            return;
+        }
+
+        currentHole = hole;
+        GameObject ball = MouseSwing.golfball;
+        sendToStartPoint(ball);
     }
 
     public void finishHole(GameObject golfball)
     {
         if (currentHole + 1 <= startsPoints.Length)
         {
-            sendToNextStartPoint(golfball);
+            setCurrentHole(currentHole + 1);
             return;
         }
 
@@ -62,28 +74,14 @@ public class GameManager : MonoBehaviour
     {
         golfball.transform.position = position;
         stopRigidbodyVelocities(golfball);
-
     }
 
-    public void sendToCurrentStartPoint(GameObject golfball)
+    private void sendToStartPoint(GameObject golfball)
     {
-        Transform startTransform = getStartPoint(currentHole).getTransform();
-        sendToPosition(getStartPoint(currentHole).getTransform().position, golfball);
-        cameraController.setInitialRotation(startTransform.rotation.eulerAngles.y);
-    }
-
-    private void sendToNextStartPoint(GameObject golfball)
-    {   
-        Transform startTransform = getStartPoint(++currentHole).getTransform();
+        Transform startTransform = getStartPositionForCurrentHole();
         sendToPosition(startTransform.position, golfball);
         cameraController.setInitialRotation(startTransform.rotation.eulerAngles.y);
         golfball.GetComponentInParent<MouseSwing>().setResetPosition(startTransform.position);
-    }
-
-    private void setGolfballTransform(GameObject golfball, Transform transform)
-    {
-        golfball.transform.position = transform.position;
-        golfball.transform.rotation = transform.rotation;
     }
 
     private void stopRigidbodyVelocities(GameObject golfball)
@@ -96,7 +94,7 @@ public class GameManager : MonoBehaviour
     private void finishCourse()
     {
         print("Course Finished!");
-        currentHole = 1;
+        setCurrentHole(1);
     }
 
     public Transform getStartPositionForCurrentHole()
