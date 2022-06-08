@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6155ed41b2d81804aa916a3e9362c283
+guid: bd2c9e690effbe546a5375b3390a11a7
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
@@ -8,32 +8,27 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Grass2
-    second: {fileID: 2100000, guid: 2c09dda938242904c974f3e64697f36e, type: 2}
+    second: {fileID: 2100000, guid: c01cb08acbafd5c409d2e277dc664d25, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Wood.013
-    second: {fileID: 2100000, guid: 74f8f82c68e86db49812b121d1332ecc, type: 2}
+      name: Ice
+    second: {fileID: 2100000, guid: 5a32451c6f29e5b469601f1cb05812d6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Wood.014
-    second: {fileID: 2100000, guid: eb203e389cbbd7a4dabcc5c10cf64d14, type: 2}
+      name: Rock 2.030
+    second: {fileID: 2100000, guid: 5cfb1a253c8f3b24e84fb494dd9a9e58, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Wood.015
-    second: {fileID: 2100000, guid: dc96494db2936f941804adff588b2a1a, type: 2}
+      name: Rock.025
+    second: {fileID: 2100000, guid: a981e35bacbe363498c9ab266377a6fc, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Wood.016
-    second: {fileID: 2100000, guid: 39c17bfa492fdb84f9bda420fb7fd9d4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: rock.001
-    second: {fileID: 2100000, guid: bc76e7ec4e3f81347ae6dca31d7bef5c, type: 2}
+      name: Wood.001
+    second: {fileID: 2100000, guid: f4afd2d2593916e42917f380e173e9b7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
